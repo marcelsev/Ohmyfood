@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 5px;
+  font-family: "Roboto", sans-serif; }
+  body #blocpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; }
+
+header {
+  width: 100%;
+  height: 100%; }
+  header #image {
+    width: 100%;
+    height: 400px; }
+    header #image img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+
+#logo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px; }
+  #logo img {
+    width: 35%; }
+  #logo #retourn {
+    position: absolute;
+    top: 35%;
+    left: 16px;
+    font-size: x-large; }
+    #logo #retourn .fa-arrow-left {
+      color: #000000; }
+
+section {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 30px 30px 0px 0px;
+  margin-top: -39px;
+  background-color: #ffffff; }
+
+#titre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px;
+  position: relative;
+  font-family: "shrikhand", cursive; }
+
+.coeur {
+  font-size: xx-large;
+  color: #000000; }
+
+.coeur2 {
+  position: absolute;
+  top: 40px;
+  right: 25px;
+  color: #ffffff;
+  font-size: 33px;
+  opacity: 0;
+  transition: color 1s ease-out 55ms; }
+  .coeur2:hover {
+    color: #9356dc;
+    opacity: 1; }
+
+h2 {
+  border: 3px solid white;
+  border-bottom-color: #99e2d0;
+  width: 66px; }
+
+.menus {
+  border: 1px solid #f2f2f2;
+  border-radius: 25px;
+  margin-top: 20px;
+  box-shadow: 3px 2px 20px #e2dfdf;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: menudeplace 2s linear;
+  animation-delay: 0.5s; }
+  .menus:hover .iconlike {
+    overflow: hidden;
+    animation: opacity 1s both;
+    animation-delay: 0.1s; }
+@keyframes opacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  .menus:hover .fa-circle-check {
+    transform: rotate(360deg);
+    transition: transform 0.7s ease; }
+  .menus:hover .texte_menu {
+    padding-right: 80px;
+    transition: 0.5s ease; }
+  .menus .texte_menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px 15px 0px 10px;
+    transition: width 2s linear;
+    transition-delay: 1s; }
+    .menus .texte_menu p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .menus .texte_menu .plat_menu {
+      width: 74%;
+      padding-left: 20px; }
+  .menus a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #000000; }
+
+@keyframes menudeplace {
+  0% {
+    transform: translateY(30px);
+    opacity: 0; }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.5; }
+  100% {
+    transform: translateY(0px);
+    opacity: 1; } }
+.price_icon {
+  display: flex;
+  width: 9%; }
+  .price_icon .menu_price {
+    padding: 40px 10px 0px 10px; }
+
+.iconlike {
+  border: 1px solid #99e2d0;
+  background: #99e2d0;
+  border-radius: 0px 25px 25px 0px;
+  padding: 26px 17px 10px 17px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  height: 100%; }
+
+.fa-circle-check {
+  font-size: xx-large;
+  color: #ffffff; }
+
+.bouton {
+  text-align: center;
+  padding: 70px; }
+  .bouton button {
+    background: linear-gradient(#9356dc, #ff79da);
+    border: 1px solid #9356dc;
+    color: #ffffff;
+    padding: 15px 50px;
+    border-radius: 30px;
+    font-size: larger;
+    cursor: pointer; }
+    .bouton button:hover {
+      opacity: 0.8;
+      box-shadow: 3px 2px 20px #9356dc; }
+
+footer {
+  width: 100%;
+  height: 100%;
+  padding: 20px 35px;
+  background-color: #323131;
+  color: #ffffff; }
+  footer h3 {
+    font-family: "Shrikhand", cursive; }
+  footer #piedepage {
+    line-height: 4px; }
+  footer .liens {
+    display: flex;
+    align-items: center; }
+    footer .liens .icon {
+      margin-right: 10px; }
+  footer a {
+    text-decoration: none;
+    color: #ffffff; }
+
+@media screen and (min-width: 992px) {
+  body {
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center; }
+
+  #blocpage {
+    width: 100%;
+    height: 100%;
+    max-width: 1300px; }
+
+  #mediaqueries {
+    display: grid;
+    grid-template-columns: 33% 33% 33%; }
+    #mediaqueries #entrees, #mediaqueries #plats, #mediaqueries #desserts {
+      margin: 20px; }
+
+  #piedepage {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; } }
+
+/*# sourceMappingURL=pages.css.map */

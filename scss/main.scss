@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+
+}
+$colorprimaire:#9356dc;
+$colorsecondaire: #ff79da;
+$colortertiaire: #99e2d0;
+$colorbackground: #f2f2f2;
+$colorfont:#000000;
+$colorfont2:#ffffff;
+$colorlocalisation: #d0cccc;
+$colorfooter:#323131;
+$colorlettrenew:#22A245;
+@mixin shadow {
+    box-shadow: 3px 2px 20px rgb(226, 223, 223);
+}
+ 
+@mixin taille100wh {
+    width: 100%;
+    height: 100%;
+}
+@mixin flexcenter { 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+@mixin cartesmediaqueries($taille1, $taille2, $bordeurcote){
+        display: grid;
+        grid-template-columns: $taille1 $taille2;
+        justify-content: space-between;
+        padding: 0px $bordeurcote;
+        height: auto;
+}
+@mixin piedepage-media {
+    display: flex;
+        justify-content: space-between;
+        width: 90%;
+}
+
+body{
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+}
+#blocpage
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden
+}
+
+.loader{
+    position: fixed;
+    display: grid;
+     place-items: center;
+    background-color: $colorfont2;
+    height: 100vh;
+    inset: 0;
+    z-index: 9;
+    opacity: 0.9;
+    animation: cacher 200ms 4s forwards;
+    transform-origin: top;
+}
+@keyframes cacher {
+    to
+    {transform: scale(0);}
+}
+.spinner{
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 8px solid transparent;
+    border-top-color: $colorsecondaire;
+    border-bottom-color: $colortertiaire;
+    border-radius: 50%;
+    animation: loading 2s ease-in-out;
+}
+
+@keyframes loading{
+0%{ transform: rotate()}
+100%{ transform: rotate(1turn)}
+}
+
+header
+{
+    @include taille100wh();
+    text-align: center
+}
+#logo
+{
+    width:89%;
+    margin: 20px;
+    img{
+        width: 45%;
+    }
+}
+#localitation
+{
+    @include flexcenter();
+    border: 1px solid $colorbackground;
+     background-color: $colorlocalisation;
+    
+   #paris{
+       margin-left: 10px;
+   }  
+}
+#tittre
+{
+    width: 100%;
+    padding: 20px;
+    background-color: $colorbackground;
+    h1{
+        font-weight: bolder;
+    }
+}
+button
+{
+    background: linear-gradient($colorprimaire, $colorsecondaire);
+    border: 1px solid $colorprimaire;
+    color: $colorfont2;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size:large;
+    cursor:pointer;
+    &:hover{
+        opacity:0.8;
+        box-shadow:3px 2px 20px $colorprimaire;
+    }
+}
+nav 
+{ @include taille100wh();
+    padding:20px;
+
+
+h2{
+    text-align:initial;
+}
+}
+.fonction
+{
+    border: 1px solid $colorbackground;
+    position: relative;
+    width:100%;
+    border-radius:25px;
+    margin-bottom:20px;
+    @include shadow();
+    
+ a{
+     text-decoration: none;
+     color: $colorfont;
+ }
+ &:hover{
+        
+    background:rgba($colorprimaire, 0.1);
+}
+&:hover .fa-solid{
+    color:$colorprimaire;
+}
+.corps
+{
+    @include flexcenter();
+    width:100%;
+    font-size:larger;
+   
+    .fa-solid{
+        margin-right:30px;  
+        
+    }
+}
+.numero{
+    position: absolute;
+    top: 18px;
+    left:-16px;
+    border:1px solid $colorprimaire;
+    border-radius:50%;
+    padding:2px 6px;
+    background-color: $colorprimaire;
+    color:$colorfont2;
+}
+}
+//cartes//
+section
+{
+    @include taille100wh();
+    padding:20px;
+    background-color: $colorbackground;
+
+.carte
+{
+    border: 2px solid $colorbackground;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: relative;
+    @include shadow();
+    background:$colorfont2;
+    a{
+        text-decoration: none;
+        color: $colorfont;
+    }
+ &:hover{
+     transform:scale(1.1);
+     box-shadow:3px 2px 20px $colorprimaire;
+ }
+}
+
+.image 
+{
+    width:100%;
+    height: 280px;
+    img{
+        @include taille100wh();
+        object-fit: cover;
+        border-radius: 30px 30px 0px 0px;
+    }
+}
+.cartebody
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+    font-size: 120%;
+    position: relative;
+    .text{
+        width: 90%;
+        height:140px;
+        padding-top:35px;
+        h3{
+            margin:0;
+        }
+        p{
+            margin:0;
+        }
+    }
+    .coeur{
+        font-size:xx-large;
+        color: $colorfont;
+        
+    }
+    .coeur2{
+        position: absolute;
+        top: 51px;
+        right: 19px;
+        color:$colorfont2;
+        font-size: 33px;
+        opacity:0;
+        transition: color 1s ease-out 55ms;
+        &:hover{
+        color: $colorprimaire;
+        opacity:1;
+        }
+    }
+}
+.new
+{
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    border: 1px solid $colortertiaire;
+    background-color: $colortertiaire;
+    padding: 10px 20px;
+    p{
+        color:$colorlettrenew;
+        font-weight:bold;
+        margin:0;
+        font-size:larger;
+    }
+}
+}
+footer{
+    @include taille100wh();
+    padding:20px 35px;
+    background-color:$colorfooter;
+    color:$colorfont2;
+    h3{
+        font-family: "Shrikhand", cursive;
+      }
+      #piedepage{
+        line-height:4px;
+    }
+      .liens{
+          display:flex;
+          align-items:center;
+          .icon{
+              margin-right: 10px;
+          }
+}
+    a{
+        text-decoration: none;
+        color:$colorfont2;
+    }
+
+}
+@media screen and (min-width: 769px) and (max-width:991px){
+    #tout{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        justify-content: space-between;
+        @include taille100wh();
+        padding: 12px;
+        .fonction{
+            margin-right: 0px;
+            .corps{
+                padding: 0px 21px;
+                font-size: large;
+            }
+            .fa-solid{
+                margin-right: 15px;
+            }
+        }
+    }
+
+    #cartetout{
+        @include cartesmediaqueries(47.5%, 47.5%, 10px);
+        .carte{
+            margin-top: 20px;
+            height: auto;
+        }
+    }
+    #piedepage{
+        @include piedepage-media();
+    }
+}
+
+@media screen and (min-width: 992px){
+   body{
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+   }
+    #blocpage{
+        @include taille100wh();
+        max-width: 1300px;
+    }
+#tout{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    .fonction{
+        margin: 20px;
+    }
+}
+#cartetout{
+    @include cartesmediaqueries(45.5%, 45.5%, 129px);
+    .carte{
+        height: auto;
+    }
+}
+#piedepage{
+    @include piedepage-media();
+}
+}
+

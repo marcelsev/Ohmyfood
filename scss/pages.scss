@@ -1,0 +1,258 @@
+*{
+    box-sizing: border-box;
+}
+
+$colorprimaire:#9356dc;
+$colorsecondaire: #ff79da;
+$colortertiaire: #99e2d0;
+$colorbackground: #f2f2f2;
+$colorfont:#000000;
+$colorfont2:#ffffff;
+$colorlocalisation: #d0cccc;
+$colorfooter:#323131;
+body{
+     margin: 5px;
+     font-family: "Roboto", sans-serif;
+     #blocpage
+     {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         overflow-x: hidden
+     }
+}
+@mixin taille100wh {
+    width: 100%;
+    height: 100%;
+}
+@mixin shadow {
+    box-shadow: 3px 2px 20px rgb(226, 223, 223);
+}
+@mixin piedepage-media {
+    display: flex;
+        justify-content: space-between;
+        width: 90%;
+}
+header{
+    @include taille100wh();
+    #image{
+        width: 100%;
+        height: 400px;
+        img{
+            object-fit: cover;
+            @include taille100wh();
+        }
+    }
+}
+#logo{
+    @include taille100wh();
+    position: relative;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom:10px;
+    img{
+        width:35%;
+    }
+    #retourn{
+        position: absolute;
+        top: 35%;
+        left: 16px;
+        font-size:x-large;
+        .fa-arrow-left{
+            color:$colorfont;
+        }
+    }
+}
+section{
+    width:100%;
+    height:auto;
+    padding: 20px;
+    border:1px solid $colorfont2;
+    border-radius:30px 30px 0px 0px;
+    margin-top:-39px;
+    background-color:$colorfont2   
+}
+#titre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px;
+    position:relative;
+    font-family: "shrikhand", cursive;
+
+}
+.coeur{
+    font-size:xx-large;
+    color: $colorfont;
+    
+}
+.coeur2{
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    color:$colorfont2;
+    font-size: 33px;
+    opacity:0;
+    transition: color 1s ease-out 55ms;
+    &:hover{
+    color: $colorprimaire;
+    opacity:1;
+    }
+}
+h2{
+border: 3px solid white;
+border-bottom-color: $colortertiaire;
+width:66px;
+}
+.menus{
+    border: 1px solid $colorbackground;
+    border-radius: 25px;
+    margin-top:20px;
+    @include shadow ;
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    animation: menudeplace 2s linear;
+    animation-delay:0.5s;
+&:hover .iconlike
+{
+    overflow:hidden;
+    animation:opacity 1s both;
+    animation-delay: 0.1s;
+
+}
+@keyframes opacity{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+&:hover .fa-circle-check
+{
+    transform: rotate(360deg);
+    transition: transform 0.7s ease;
+    
+}
+&:hover .texte_menu{
+     padding-right:80px;
+    transition: 0.5s ease;
+}
+.texte_menu {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    overflow:hidden;
+    padding:0px 15px 0px 10px;
+    transition: width 2s linear;
+    transition-delay:1s;
+    p{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .plat_menu{
+        width:74%;
+        padding-left:20px;
+    }
+}
+ a{
+    display:flex;
+    justify-content:space-between;
+    text-decoration:none;
+    color: $colorfont;
+ }
+    
+}
+@keyframes menudeplace{
+    0%{transform:translateY(30px);opacity:0;}
+    50%{transform:translateY(15px); opacity:0.5;}
+    100%{transform:translateY(0px);opacity:1;}
+}
+.price_icon {
+    display:flex;
+    width:9%;
+    .menu_price{
+        padding:40px 10px 0px 10px;
+    }
+}
+    .iconlike{
+    border: 1px solid $colortertiaire;
+    background: $colortertiaire;
+    border-radius:0px 25px 25px 0px;
+    padding:26px 17px 10px 17px;
+    opacity:0;
+    position:absolute;
+    right:0;
+    height:100%;
+    }
+    
+
+.fa-circle-check{
+    font-size:xx-large;
+    color:$colorfont2;
+
+}
+.bouton{
+    text-align:center;
+    padding:70px;
+button
+{
+    background: linear-gradient($colorprimaire, $colorsecondaire);
+    border: 1px solid $colorprimaire;
+    color: $colorfont2;
+    padding: 15px 50px;
+    border-radius: 30px; 
+    font-size:larger;
+    cursor:pointer;
+    &:hover{
+        opacity:0.8;
+        box-shadow:3px 2px 20px $colorprimaire;
+    }
+}
+}
+
+footer{
+    @include taille100wh();
+    padding:20px 35px;
+    background-color:$colorfooter;
+    color:$colorfont2;
+    h3{
+        font-family: "Shrikhand", cursive;
+      }
+      #piedepage{
+          line-height:4px;
+      }
+      .liens{
+          display:flex;
+          align-items:center;
+          .icon{
+              margin-right: 10px;
+          }
+}
+    a{
+        text-decoration: none;
+        color:$colorfont2;
+    }
+
+}
+
+@media screen and (min-width: 992px){
+    body{
+     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    }
+     #blocpage{
+         @include taille100wh();
+         max-width: 1300px;
+     }
+    #mediaqueries{
+        display:grid;
+        grid-template-columns: 33% 33% 33%;
+        #entrees, #plats, #desserts {
+            margin:20px;
+        }
+    }
+    #piedepage{
+        @include piedepage-media();
+    }
+    }
