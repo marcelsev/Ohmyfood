@@ -38,7 +38,7 @@ body {
 
 @keyframes loading {
   0% {
-    transform: rotate(); }
+    transform: rotate(0); }
   100% {
     transform: rotate(1turn); } }
 header {
@@ -57,9 +57,15 @@ header {
   justify-content: center;
   align-items: center;
   border: 1px solid #f2f2f2;
-  background-color: #d0cccc; }
+  background-color: #d0cccc;
+  padding: 8px 0px 8px 0px; }
+  #localitation .fa-location-dot {
+    width: 30px; }
   #localitation #paris {
-    margin-left: 10px; }
+    background: #d0cccc;
+    border: 1px solid #d0cccc;
+    font-size: large;
+    width: 150px; }
 
 #tittre {
   width: 100%;

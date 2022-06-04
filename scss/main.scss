@@ -77,7 +77,7 @@ body{
 }
 
 @keyframes loading{
-0%{ transform: rotate()}
+0%{ transform: rotate(0)}
 100%{ transform: rotate(1turn)}
 }
 
@@ -99,9 +99,15 @@ header
     @include flexcenter();
     border: 1px solid $colorbackground;
      background-color: $colorlocalisation;
-    
+     padding:8px 0px 8px 0px;
+    .fa-location-dot{
+        width:30px;
+    }
    #paris{
-       margin-left: 10px;
+       background:$colorlocalisation;
+       border:1px solid $colorlocalisation;
+       font-size:large;
+       width:150px;
    }  
 }
 #tittre
